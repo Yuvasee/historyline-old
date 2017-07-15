@@ -1,0 +1,34 @@
+#hl-canvas-container {
+	overflow: auto;
+}
+
+div.switch {
+	margin-left: 10px;
+}
+div.switch a {
+	color: royalblue;
+	text-decoration: none;
+	border-bottom: 1px dashed royalblue;
+}
+div.switch a:hover {
+	color: red;
+	border-bottom: 1px dashed red;
+}
+
+div.sw-off {
+	display: none;
+}
+
+div.sw-group {
+	padding: 5px 0;
+	background-color: lightyellow;
+	margin-bottom: 10px;
+}
+
+form.groups-list {
+	margin-bottom: 10px;
+}
+
+input.hl-sm {
+	width: 100px !important;
+}

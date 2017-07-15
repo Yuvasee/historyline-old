@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Historyline 0.51</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/hl.css">
+
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="js/jquery.svg/jquery.svg.js"></script>
+	<script src="js/jquery.svg/jquery.svganim.js"></script>
+    <script src="node_modules/jquery.panzoom/dist/jquery.panzoom.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container-fluid">
+
+	<div id="hl-canvas-container">
+		<div id="hl-canvas"></div>
+	</div>
+	<div>
+		<div id="hl-timeline-canvas"></div>
+	</div>
+
+	<div class="row">
+
+		<div class="col-md-6">
+
+			<div class="sw-group">
+				<div class="switch"><a href="#">Добавить группу JSON-массивом</a></div>
+				<div class="form-group" style="margin: 10px">
+
+					<textarea class="form-control" rows="10" id="lines"></textarea>
+
+					<form class="form-inline" style="margin-top: 0.5em">
+						<div class="form-group">
+							<label for="newGroupName">Название</label>
+							<input type="text" class="form-control" id="newGroupName" placeholder="Russian kings">
+						</div>
+
+						<div class="form-group">
+							<label for="newGroupColor">Цвет</label>
+							<input type="text" class="form-control hl-sm" id="newGroupColor" value="#ff0000">
+						</div>
+
+						<div class="form-group">
+							<label for="newGroupFloorsN">Этажи</label>
+							<input type="number" class="form-control hl-sm" id="newGroupFloorsN" value="10">
+						</div>
+					</form>
+
+					<div style="margin: 0.5em 0">
+						<label class="checkbox-inline">
+							<input type="radio" name="renderType" id="renderType2" value="ladder" checked="checked"> Лестница
+						</label>
+						<label class="checkbox-inline">
+							<input type="radio" name="renderType" id="renderType1" value="freeSpace"> Плотно
+						</label>
+					</div>
+
+					<button type="button" class="btn btn-default" id="parse">Добавить</button>
+				</div>
+			</div>
+
+			<div class="sw-group">
+				<div class="switch"><a href="#">Добавить линию</a></div>
+				<div style="margin: 10px">
+					<form class="form-inline">
+
+						<div class="form-group">
+							<label for="addName">Имя</label>
+							<input type="text" class="form-control" id="addName" value="Bob Marley">
+						</div>
+
+						<div class="form-group">
+							<label for="addBegin">Начало</label>
+							<input type="number" class="form-control" id="addBegin" value="10">
+						</div>
+
+						<div class="form-group">
+							<label for="addEnd">Конец</label>
+							<input type="number" class="form-control" id="addEnd" value="90">
+						</div>
+
+						<button type="button" class="btn btn-default" id="addLine">Добавить</button>
+
+					</form>
+				</div>
+			</div>
+
+			<div class="sw-group">
+				<div class="switch"><a href="#">Настроить масштаб</a></div>
+				<div style="margin: 10px">
+					<form class="form-inline">
+
+						<div class="form-group">
+							<label for="addName">Пикселей на год</label>
+							<input type="number" class="form-control hl-sm" id="pxPerYear" value="">
+						</div>
+
+						<div class="form-group">
+							<label for="addName">Размер шрифта</label>
+							<input type="number" class="form-control hl-sm" id="fontSize" value="">
+						</div>
+
+						<button type="button" class="btn btn-default" id="redraw">Перерисовать</button>
+
+					</form>
+				</div>
+			</div>
+
+			<div class="sw-group">
+				<div class="switch"><a href="#">Импорт JSON-массива</a></div>
+				<div style="margin: 10px">
+					<textarea class="form-control" rows="10" id="importJSON"></textarea>
+					<button type="button" class="btn btn-default" id="importJSONButton">Импортировать</button>
+				</div>
+			</div>
+
+			<div class="sw-group">
+				<div class="switch"><a href="#">Экспорт JSON-массива</a></div>
+				<div style="margin: 10px">
+					<textarea class="form-control" rows="10" id="exportJSON"></textarea>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-6">
+
+			<div class="sw-group">
+				<div class="switch"><a href="#">Группы линий</a></div>
+				<div style="margin: 10px" id="groupsList">
+					<!-- Динамический контент -->
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<script src="js/historyline.js"></script>
+
+</body>
+</html>
